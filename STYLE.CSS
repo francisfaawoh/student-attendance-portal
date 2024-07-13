@@ -1,0 +1,158 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #051f74;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    background-image: url('logo.jpg'); /* Ensure the image path is correct */
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 300px 160%; /* Adjust size to fit left side */
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em; /* Base font size */
+    position: relative;
+    z-index: 1; /* Ensure text is above the background image */
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+.admin-section {
+    display: flex;
+    align-items: center; /* Align items vertically centered */
+    margin-bottom: 10px; /* Add some space below the section */
+}
+
+.admin-section input[type="checkbox"] {
+    margin-right: 10px; /* Space between checkbox and label */
+    margin-top: 3%;
+}
+
+input, select, button {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#download-pdf, #clear-data, #logout-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+#download-pdf:hover, #clear-data:hover, #logout-button:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    header {
+        background-size: 100px 100%; /* Adjust size for smaller screens */
+    }
+
+    header h1 {
+        font-size: 1.0em; /* Reduce font size on mobile */
+       margin-left: 30%; /* Ensure text doesn't get cut off */
+    }
+
+    .admin-section {
+        flex-direction: column; /* Stack items vertically on small screens */
+        align-items: flex-start; /* Align items to the start of the container */
+    }
+
+    .admin-section input[type="checkbox"] {
+        margin-right: 0; /* Remove margin on small screens */
+        margin-bottom: 5px; /* Space between checkbox and label when stacked */
+    }
+}
+
+#login-container, #register-container, #attendance-container {
+    display: none;
+}
+
+#login-container, #register-container, #attendance-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+#login-error, #register-error {
+    color: red;
+    display: none;
+}

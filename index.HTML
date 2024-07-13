@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Attendance Portal</title>
+    <link rel="stylesheet" href="STYLE.CSS">
+</head>
+<body>
+    <header><h1>Student Attendance Portal</h1></header>
+    <div id="login-container">
+        <h2>Login</h2>
+        <form id="login-form">
+            <label for="login-username">Username</label>
+            <input type="text" id="login-username" name="username" required>
+            
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" name="password" required>
+            
+            <button type="submit">Login</button>
+            <p id="login-error" style="color: red; display: none;">Invalid username or password</p>
+        </form>
+        <button id="show-register">Register</button>
+    </div>
+
+    <div id="register-container" style="display: none;">
+        <h2>Register</h2>
+        <form id="register-form">
+            <label for="register-username">Username</label>
+            <input type="text" id="register-username" name="username" required>
+            
+            <label for="register-password">Password</label>
+            <input type="password" id="register-password" name="password" required>
+
+            <div class="admin-section">
+                <label for="register-admin">Admin</label>
+                <input type="checkbox" id="register-admin" name="admin">
+            </div>
+            
+            <button type="submit">Register</button>
+            <p id="register-error" style="color: red; display: none;">Registration failed. Username may already exist.</p>
+        </form>
+        <button id="show-login">Login</button>
+    </div>
+
+    <div id="attendance-container" style="display: none;">
+        <form id="attendance-form">
+            <label for="student-name">Student Name</label>
+            <input type="text" id="student-name" name="student-name" required>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required readonly>
+
+            <label for="status">Status</label>
+            <select id="status" name="status" required>
+                <option value="" disabled selected>Select status</option>
+                <option value="Present">Present</option>
+                <option value="Absent">Absent</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+        <button id="clear-data" style="display: none;">Clear Data</button>
+        <h2>Attendance Records</h2>
+        <table id="attendance-records">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        
+        <h2>Attendance Statistics</h2>
+        <div id="attendance-stats">
+            <p>Total Present: <span id="total-present">0</span></p>
+            <p>Total Absent: <span id="total-absent">0</span></p>
+            <button id="download-pdf">Download as PDF</button> 
+        </div>
+        <button id="logout-button">Logout</button>
+    </div>
+
+    <!-- Admin View -->
+    <div id="admin-view" style="display: none;">
+        <h2>Admin View</h2>
+        <table id="admin-attendance-records">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button id="back-to-attendance">Back to Attendance</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
